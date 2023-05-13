@@ -97,8 +97,7 @@ class Jobs extends Component {
         profileDetails: formatedData.profileDetails,
         apiProfileStatus: apiStatusConstants.success,
       })
-    }
-    if (response.status === 400) {
+    } else {
       this.setState({apiProfileStatus: apiStatusConstants.failure})
     }
   }
@@ -226,7 +225,7 @@ class Jobs extends Component {
     )
 
   onChangeSearchInput = event =>
-    this.setState({searchInput: event.target.value}, this.getJobsApiList)
+    this.setState({searchInput: event.target.value})
 
   // Render Filter Section
   renderFilterSection = () => {
